@@ -1,0 +1,31 @@
+{
+  "name": "project-cardiff-identity-backend",
+  "version": "1.0.0",
+  "description": "User profile provider",
+  "main": "server.tsx",
+  "scripts": {
+    "start": "node server.tsx",
+    "server": "nodemon server.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaAnimal/project-cardiff-identity-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlphaAnimal/project-cardiff-identity-backend/issues"
+  },
+  "homepage": "https://github.com/AlphaAnimal/project-cardiff-identity-backend#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0"
+  }
+}
