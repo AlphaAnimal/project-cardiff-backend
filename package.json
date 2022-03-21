@@ -1,7 +1,7 @@
 {
   "name": "project-cardiff-identity-backend",
   "version": "1.0.0",
-  "description": "User profile provider",
+  "description": "REST API",
   "main": "server.tsx",
   "scripts": {
     "start": "node server.js",

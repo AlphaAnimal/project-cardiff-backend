@@ -2,18 +2,18 @@ const asyncHandler = require('express-async-handler')
 
 const Word = require('../models/wordModel')
 
-//@desc Get users
-//@route GET /api/users
+//@desc Get words
+//@route GET /api/words
 //@access Private
-const getUsers = asyncHandler(async (req, res) => {
+const getWords = asyncHandler(async (req, res) => {
     const words = await Word.find()
     res.status(200).json(words)
 })
 
-//@desc Set users
-//@route SET /api/users
+//@desc Set words
+//@route SET /api/words
 //@access Private
-const setUser = asyncHandler(async (req, res) => {
+const setWord = asyncHandler(async (req, res) => {
     if(!req.body.text){
         res.status(400)
         throw new Error('Please add a text field to the body')
@@ -26,16 +26,16 @@ const setUser = asyncHandler(async (req, res) => {
     res.status(200).json(word)
 })
 
-//@desc Update users
-//@route PUT /api/users/id
+//@desc Update words
+//@route PUT /api/words/id
 //@access Private
-const updateUser = asyncHandler(async (req, res) => {
+const updateWord = asyncHandler(async (req, res) => {
 
     const word = await Word.findById(req.params.id)
 
     if(!word){
         res.status(400)
-        throw new Error('Goal not found')
+        throw new Error('Word not found')
     }
 
     const updatedWord = await Word.findByIdAndUpdate(req.params.id, req.body, {
@@ -45,16 +45,16 @@ const updateUser = asyncHandler(async (req, res) => {
     res.status(200).json(updatedWord)
 })
 
-//@desc Delete users
-//@route DELETE /api/users:id
+//@desc Delete words
+//@route DELETE /api/words:id
 //@access Private 
-const deleteUser = asyncHandler(async (req, res) => {
+const deleteWord = asyncHandler(async (req, res) => {
 
     const word = await Word.findById(req.params.id)
 
     if(!word){
         res.status(400)
-        throw new Error('Goal not found')
+        throw new Error('Word not found')
     }
 
     await word.remove()
@@ -63,8 +63,8 @@ const deleteUser = asyncHandler(async (req, res) => {
 })
 
 module.exports = {
-    getUsers,
-    setUser,
-    updateUser,
-    deleteUser,
+    getWords,
+    setWord,
+    updateWord,
+    deleteWord,
 }
