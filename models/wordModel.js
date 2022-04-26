@@ -5,6 +5,10 @@ const wordSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please enter a text value']
     },
+    mistakes: {
+        type: Number,
+        required: [true, 'Please enter a mistakes value']
+    },
 },
 {
     timestamps: true,
