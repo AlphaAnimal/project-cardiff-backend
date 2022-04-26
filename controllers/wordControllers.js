@@ -20,7 +20,8 @@ const setWord = asyncHandler(async (req, res) => {
     }
 
     const word = await Word.create({
-        text: req.body.text
+        text: req.body.text,
+        mistakes: req.body.mistakes
     }) 
 
     res.status(200).json(word)
