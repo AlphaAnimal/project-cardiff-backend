@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const goalSchema = mongoose.Schema(
+const scoreSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -9,16 +9,20 @@ const goalSchema = mongoose.Schema(
     },
     type: {
         type: String,
-        required: [true, 'Please add a text value'],
+        required: [true, 'Please add a type value'],
       },
     score: {
       type: Number,
-      required: [true, 'Please add a text value'],
+      required: [true, 'Please add a score value'],
     },
+    theme: {
+      type: Boolean,
+      required: [true, 'Please add a theme value'],
+    }
   },
   {
     timestamps: true,
   }
 )
 
-module.exports = mongoose.model('Goal', goalSchema)
+module.exports = mongoose.model('Score', scoreSchema)

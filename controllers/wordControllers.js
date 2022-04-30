@@ -63,9 +63,16 @@ const deleteWord = asyncHandler(async (req, res) => {
     res.status(200).json({ id: req.params.id})
 })
 
+const deleteAllWords = asyncHandler(async (req, res) => {
+
+    const words = await Word.deleteMany()
+    res.status(200).json(words)
+
+})
+
 module.exports = {
     getWords,
     setWord,
     updateWord,
-    deleteWord,
+    deleteAllWords,
 }

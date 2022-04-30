@@ -7,7 +7,7 @@ const User = require('../models/userModel')
 // @route   GET /api/scores
 // @access  Private
 const getScores = asyncHandler(async (req, res) => {
-  const scores = await Score.find({ user: req.user.id })
+  const scores = await Score.find({ })
 
   res.status(200).json(scores)
 })
@@ -25,6 +25,7 @@ const setScore = asyncHandler(async (req, res) => {
     user: req.user.id,
     type: req.body.type,
     score: req.body.score,
+    theme: req.body.theme,
   })
 
   res.status(200).json(score)
