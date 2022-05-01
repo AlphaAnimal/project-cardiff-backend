@@ -5,7 +5,7 @@ const User = require('../models/userModel')
 
 // @desc    Get scores
 // @route   GET /api/scores
-// @access  Private
+// @access  Public
 const getScores = asyncHandler(async (req, res) => {
   const scores = await Score.find({ })
 
@@ -14,7 +14,7 @@ const getScores = asyncHandler(async (req, res) => {
 
 // @desc    Set score
 // @route   POST /api/scores
-// @access  Private
+// @access  Public
 const setScore = asyncHandler(async (req, res) => {
   if (!req.body.score || !req.body.type) {
     res.status(400)
