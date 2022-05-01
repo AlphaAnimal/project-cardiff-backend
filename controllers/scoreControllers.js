@@ -22,7 +22,7 @@ const setScore = asyncHandler(async (req, res) => {
   }
 
   const score = await Score.create({
-    user: req.user.id,
+    user: req.body.user,
     type: req.body.type,
     score: req.body.score,
     theme: req.body.theme,
