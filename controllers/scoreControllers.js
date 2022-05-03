@@ -16,7 +16,7 @@ const getScores = asyncHandler(async (req, res) => {
 // @route   POST /api/scores
 // @access  Public
 const setScore = asyncHandler(async (req, res) => {
-  if (!req.body.score || !req.body.type) {
+  if (!req.body.user || !req.body.score || !req.body.type || !req.body.theme) {
     res.status(400)
     throw new Error('Please add all fields')
   }
